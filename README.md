@@ -7,7 +7,7 @@ In this study, we designed a novel deep learning model CADS (Causal Adjustment f
 
 <img src="modelFramework.png" width="1000px">
 
-Figure (a) Distribution of 1,687 carparks throughout Singapore. (b) The framework of DeepPA, our proposed predictive architecture.
+The pipeline of CADS. The \model framework primarily consists of three main components: **(a)** *Drug Feature Extraction* is employed to extract drug features from sequences or 2D molecular graphs; **(b)** *Causal Mask Encoder* generates learnable causal mask pairs to decouple causal information from trivial information leveraging cell line profiles; **(c-d)** *Drug-Cell Fusion* employs Multi-Layer Perceptrons (MLP) or Cross-Attention (CA) and Multi-head Self-Attention (MSA) to fuse drug features with decoupled cell representations; **(e)** *Causal Learning Module* learns hard-to-observe causal information by training the causal and trivial components separately with ground truth and fake labels, respectively.
 
 ## Live Demo System
 
