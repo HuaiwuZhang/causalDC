@@ -94,6 +94,8 @@ python main.py --model synergyx_causal --infer True --labels sscore --pretrain F
 
 ```
 python main.py --model synergyx_causal --wandb False --pretrain False --testing False --labels sscore --IG_drugA Ruxolitinib --IG_drugB Vismodegib
+```
+```
 python main.py --model synergyx_causal --wandb False --pretrain False --testing False --labels sscore --IG_drugA Crizotinib --IG_drugB Lenalidomide
 ```
 
