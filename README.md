@@ -31,24 +31,18 @@ conda activate causalDC
 pip install -r requirements.txt
 ```
 
-### Prepare the Dataset
-
-Put the dataset you have download from [huggingface](https://huggingface.co/datasets/Huaiwu/SINPA/tree/main) is placed in the following structure:
-
-```bash
-📂 data
-└── 📁 SINPA
-    ├── 📄 train.npz
-    ├── 📄 val.npz
-    └── 📄 test.npz
-```
-
 ### (Optional) Weights & Biases
 
 If you want to enable [Weights & Biases]() logging:
 
 ```bash
 wandb login
+```
+
+Add your wandb key in main.py
+
+```python
+wandb.login(key="<your-wandb-key>")
 ```
 
 ### Model Training
