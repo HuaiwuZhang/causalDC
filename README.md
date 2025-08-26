@@ -45,27 +45,22 @@ Add your wandb key in main.py
 wandb.login(key="<your-wandb-key>")
 ```
 
-### Model Training
+### Model Training & Testing
 
-The following examples are conducted on the base dataset of SINPA:
+* Example 1: Training *SynergyX* as a base model from scratch with ***CADS*** embeddings, using *Loewe* as the drug synergy metric.
+* 
+```
+python main.py --model synergyx_causal --labels loewe
+```
+(Here we added functionality to save and load training parameters so you can start or stop training at any time.)
 
-* Example 1 (DeepPA with default setting):
+
+* Example 2: Few-shot learning using *DeepSynergy* as a base model from scratch with ***CADS*** embeddings, based on the *s-score* metric, saving 70% of the training data.
 
 ```
-python ./experiments/DeepPA/main.py --dataset SINPA --mode train --gpu 0
+python main.py --model deepsynergy_causal --torch_seed 40 --n_exp 1 --labels sscore --few_shot_ratio 0.7
 ```
 
-* Example 2 (DeepPA without GCO):
-
-```
-python ./experiments/DeepPA/main.py --dataset SINPA --mode train --gpu 0 --GCO False
-```
-
-* Example 2 (DeepPA with the 0.7 proportion of low frequency signals):
-
-```
-python ./experiments/DeepPA/main.py --dataset SINPA --mode train --gpu 0 --GCO_Thre 0.7
-```
 
 ### Model Evaluation
 
