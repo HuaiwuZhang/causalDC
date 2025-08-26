@@ -48,7 +48,7 @@ wandb.login(key="<your-wandb-key>")
 ### Model Training & Testing
 
 **Example 1**: Training *SynergyX* as a base model from scratch with ***CADS*** embeddings, using *Loewe* as the drug synergy metric.
-* 
+
 ```
 python main.py --model synergyx_causal --labels loewe
 ```
