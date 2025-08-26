@@ -14,15 +14,15 @@ The pipeline of CADS. The ***CADS*** framework primarily consists of three main 
 ### Clone the Repository
 
 ```bash
-git clone git@github.com:yoshall/SINPA.git
-cd SINPA
+git clone https://github.com/HuaiwuZhang/causalDC.git
+cd causalDC
 ```
 
 ### Create and Activate a New Environment
 
 ```bash
-conda create -n sinpa python=3.9 -y
-conda activate sinpa
+conda create -n causalDC python=3.9 -y
+conda activate causalDC
 ```
 
 ### Install Dependencies
