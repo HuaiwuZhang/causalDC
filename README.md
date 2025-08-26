@@ -9,16 +9,6 @@ In this study, we designed a novel deep learning model ***CADS*** (Causal Adjust
 
 The pipeline of CADS. The ***CADS*** framework primarily consists of three main components: **(a)** *Drug Feature Extraction* is employed to extract drug features from sequences or 2D molecular graphs; **(b)** *Causal Mask Encoder* generates learnable causal mask pairs to decouple causal information from trivial information leveraging cell line profiles; **(c-d)** *Drug-Cell Fusion* employs Multi-Layer Perceptrons (MLP) or Cross-Attention (CA) and Multi-head Self-Attention (MSA) to fuse drug features with decoupled cell representations; **(e)** *Causal Learning Module* learns hard-to-observe causal information by training the causal and trivial components separately with ground truth and fake labels, respectively.
 
-## Live Demo System
-
-<a href="https://sinpa.netlify.app" target="_blank">
-    <img src="./img/sinpa_demo.gif" width="600"/>
-  </a>
-
-🔗 Try it here: [https://sinpa.netlify.app](https://sinpa.netlify.app)
-
-The interactive demo system is built on the Mapbox platform. It allows users to select a parking location and visualize both predicted and actual parking availability.
-
 ## Dataset Description
 
 In this section, we will outline the procedure for downloading the SINPA dataset, followed by a detailed description of the dataset.
