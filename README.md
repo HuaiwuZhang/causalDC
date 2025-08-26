@@ -1,7 +1,7 @@
-# causalDC
+# ***CADS***
 
 This repo is the implementation of our IEEE Journal of Biomedical and Health Informatics paper entitled [CADS: Causal Inference for Dissecting Essential Genes to Predict Drug Synergy](https://www.google.com/).
-In this study, we designed a novel deep learning model ***CADS*** (Causal Adjustment for Drug Synergy) based on causal inference for the prediction of drug synergy. Then we integrated CADS into several carefully selected base models and demonstrated its efficient predictive performance through comprehensive experiments. Finally, we conducted comprehensive experiments to validate the CADS's performance and robustness, and conducted multi-granularity analyses to identify and interpret causal genes associated with drug synergy.
+In this study, we designed a novel deep learning model ***CADS*** (Causal Adjustment for Drug Synergy) based on causal inference for the prediction of drug synergy. Then we integrated ***CADS*** into several carefully selected base models and demonstrated its efficient predictive performance through comprehensive experiments. Finally, we conducted comprehensive experiments to validate the ***CADS***'s performance and robustness, and conducted multi-granularity analyses to identify and interpret causal genes associated with drug synergy.
 
 ## Framework Overview
 
