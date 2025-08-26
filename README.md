@@ -18,6 +18,22 @@ git clone https://github.com/HuaiwuZhang/causalDC.git
 cd causalDC
 ```
 
+### Prepare the Dataset
+
+Put the dataset you have download from [huggingface](https://huggingface.co/datasets/Huaiwu/causalDC/tree/main) is placed in the following structure:
+
+```bash
+📂 causalDC
+└── 📁 data
+    ├── 📄 copynumber.csv
+    ├── 📄 dependency.csv
+    ├── 📄 drug.csv
+    ├── 📄 drugcomb.csv
+    ├── 📄 expression.csv
+    ├── 📄 mutation.csv
+    └── 📄 novel_combos.csv
+```
+
 ### Create and Activate a New Environment
 
 ```bash
