@@ -47,7 +47,7 @@ wandb.login(key="<your-wandb-key>")
 
 ### Model Training & Testing
 
-* Example 1: Training *SynergyX* as a base model from scratch with ***CADS*** embeddings, using *Loewe* as the drug synergy metric.
+**Example 1**: Training *SynergyX* as a base model from scratch with ***CADS*** embeddings, using *Loewe* as the drug synergy metric.
 * 
 ```
 python main.py --model synergyx_causal --labels loewe
@@ -55,27 +55,46 @@ python main.py --model synergyx_causal --labels loewe
 (Here we added functionality to save and load training parameters so you can start or stop training at any time.)
 
 
-* Example 2: Few-shot learning using *DeepSynergy* as a base model from scratch with ***CADS*** embeddings, based on the *s-score* metric, saving 70% of the training data.
+**Example 2**: Few-shot learning using *DeepSynergy* as a base model from scratch with ***CADS*** embeddings, based on the *s-score* metric, saving 70% of the training data.
 
 ```
 python main.py --model deepsynergy_causal --torch_seed 40 --n_exp 1 --labels sscore --few_shot_ratio 0.7
 ```
 
-
-### Model Evaluation
-
-To test the above-trained models, you can use the following command:
-
-* Example 1 (DeepPA with default setting):
+**Example 3**: Calculating the evaluation metrics for the valid set using *DeepDDS* as a base model from scratch with ***CADS*** embeddings, based on *ZIP* metric.
 
 ```
-python ./experiments/DeepPA/main.py --dataset SINPA --mode test --gpu 0
+python main.py --model synergyx_causal --labels zip --test_valid True --pretrain False --testing False
 ```
 
-* Example 2 (DeepPA with the 0.7 proportion of low frequency signals):
+
+### More Function
+
+To test more function based on above-trained models, you can use the following command:
+
+**Example 1**: Obtaining the cell embedding, using *SynergyX* as a base model from scratch with ***CADS*** embeddings, based on *S-Score* metric.
 
 ```
-python ./experiments/DeepPA/main.py --dataset SINPA --mode test --gpu 0 --GCO_Thre 0.7
+python main.py --wandb False --model synergyx_causal --get_cell_embedding True --labels sscore --pretrain False --testing False
+```
+
+**Example 2**: Evaluation of novel drug combinations.
+
+```
+python main.py --model synergyx_causal --labels sscore --pretrain False --testing False --wandb False --novel True
+```
+
+**Example 3**: Retrieving general causal genes across cell lines.
+
+```
+python main.py --model synergyx_causal --infer True --labels sscore --pretrain False
+```
+
+**Example 4**: Retrieving causal genes that affect specific drug combinations.
+
+```
+python main.py --model synergyx_causal --wandb False --pretrain False --testing False --labels sscore --IG_drugA Ruxolitinib --IG_drugB Vismodegib
+python main.py --model synergyx_causal --wandb False --pretrain False --testing False --labels sscore --IG_drugA Crizotinib --IG_drugB Lenalidomide
 ```
 
 ## Folder Structure
@@ -83,7 +102,7 @@ python ./experiments/DeepPA/main.py --dataset SINPA --mode test --gpu 0 --GCO_Th
 We list the code of the major modules as follows:
 
 1. The main function to train/test our model:  [click here.](experiments/DeepPA/main.py "1")
-2. The source code of our model: [click here.](src/models/DeepPA.py "2")
+2. The source code of base models and causal models: [click here.](models "2")
 3. The trainer/tester: [click here.](src/trainers/deeppa_trainer.py "3")
 4. Data preparation and preprocessing are located at [click here.](experiments/DeepPA/main.py "4")
 5. Computations: [click here.](src/utils "5")
