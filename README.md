@@ -5,7 +5,7 @@ In this study, we designed a novel deep learning model CADS (Causal Adjustment f
 
 ## Framework Overview
 
-<img src="img/intro and model.png" width="1000px">
+<img src="modelFramework.png" width="1000px">
 
 Figure (a) Distribution of 1,687 carparks throughout Singapore. (b) The framework of DeepPA, our proposed predictive architecture.
 
