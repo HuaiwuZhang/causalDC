@@ -101,62 +101,43 @@ python main.py --model synergyx_causal --wandb False --pretrain False --testing 
 
 We list the code of the major modules as follows:
 
-1. The main function to train/test our model:  [click here.](experiments/DeepPA/main.py "1")
+1. The main function to train/test our model:  [click here.](main.py "1")
 2. The source code of base models and causal models: [click here.](models "2")
-3. The trainer/tester: [click here.](src/trainers/deeppa_trainer.py "3")
-4. Data preparation and preprocessing are located at [click here.](experiments/DeepPA/main.py "4")
-5. Computations: [click here.](src/utils "5")
+3. The trainer: [click here.](src/base/trainer.py "3")
+4. Data preparation and preprocessing are located at [click here.](utils.py "4")
 
 ## Arguments
 
 We introduce some major arguments of our main function here.
 
-Training settings:
+- split_seed: Random seed for data splitting 
+- torch_seed: experimental group number.
+- batch_size: which gpu used to train.
+- pretrain: Whether to train.
+- testing: Whether to test.
+- model: Used model.
+- base_lr: Learning rate.
+- max_epochs: maximum of the training epoch.
+- n_exp: Experiment index.
+- wandb: Whether to use wandb.
+- labels: Synergy metric.
+- infer: Retrive the general causal genes.
+- IG_drugA: Drug A of the novel drug combination.
+- IG_drugB: Drug B of the novel drug combination.
+- few_shot_ratio: Training data ratio when doing few-shot learning.
+- novel: Novel drug combination evaluation.
+- get_cell_embedding: Retrive cell embedding.
+- test_valid: Calculate the metric of valid set.
 
-- mode: indicating the mode (train or test).
-- n_exp: experimental group number.
-- gpu: which gpu used to train.
-- seed: the random seed for experiments. (default: 0)
-- dataset: dataset path for the experiment.
-- batch_size: batch size of training or testing.
-- seq_len: the length of historical steps.
-- horizon: the length of future steps.
-- input_dim: the dimension of inputs.
-- output_dim: the dimension of inputs.
-- max_epochs: maximum number of training epochs.
-- patience: the patience of early stopping.
-- save_preds: whether to save prediction results.
-- wandb: whether to use wandb.
 
-Model hyperparameters:
 
-- dropout: dropout rate.
-- n_blocks: number of layers of SLBlock and TLBlock.
-- n_hidden: hidden dimensions in SLBlock and TLBlock.
-- n_heads: number of heads in MSA.
-- spatial_flag: whether to use SLBlock.
-- temporal_flag: whether to use TLBlock.
-- spatial_encoding: whether to treat temporal factor as a station.
-- temporal_encoding: Whether to incorporate spatial factor into TLBlock.
-- temporal_PE: whether to use temporal position encoding.
-- GCO: whether to use GCO.
-- GCO_Thre: the proportion of low frequency signals.
-- base_lr: base learning rate.
-- lr_decay_ratio: learning rate decay ratio.
+## Acknowledgement
 
-## License
-
-The <b>SINPA</b> dataset is released under the Singapore Open Data Licence: [https://beta.data.gov.sg/open-data-license](https://beta.data.gov.sg/open-data-license).
 
 ## Citation
 
 If you find our work useful in your research, please cite:
 
 ```
-@inproceedings{zhang2024predicting,
-  title={Predicting Parking Availability in Singapore with Cross-Domain Data: A New Dataset and A Data-Driven Approach},
-  author={Zhang, Huaiwu and Xia, Yutong and Zhong, Siru and Wang, Kun and Tong, Zekun and Wen, Qingsong and Zimmermann, Roger and Liang, Yuxuan},
-  booktitle={Proceedings of the Thirty-third International Joint Conference on Artificial Intelligence, IJCAI-24},
-  year={2024}
-}
+
 ```
