@@ -62,7 +62,6 @@ if __name__ == '__main__':
         param_str = param_str + '_few_shot_' + str(args.few_shot_ratio)
     args.log_dir = "{}/experiment/{}/{}".format(folder_path, args.finetune_dataset, param_str)
     if args.wandb:
-        wandb.login(key="03455359de6e84d9bb06ffcf977c65a92e8fb8e8")
         wandb.login(key="<your-wandb-key>")
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -205,3 +204,4 @@ if __name__ == '__main__':
         pretrainer.get_cell_embedding('pretrain', mode='infer', cell_line_list=cell_line_list, gene_list=gene_list)
     if args.wandb:
         wandb.finish()
+
