@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 ### (Optional) Weights & Biases
 
-If you want to enable [Weights & Biases]() logging:
+If you want to enable [Weights & Biases](https://wandb.ai/site/) logging:
 
 ```bash
 wandb login
