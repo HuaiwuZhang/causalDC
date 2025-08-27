@@ -151,7 +151,7 @@ We introduce some major arguments of our main function here.
 
 ## Acknowledgement
 
-We referenced the model architecture and training framework from [SynergyX](https://github.com/GSanShui/SynergyX), [DeepDDS](https://github.com/Sinwang404/DeepDDS/tree/master), [PermuteDDS](https://github.com/littlewei-lazy/PermuteDDS) and [CAT](https://github.com/yongduosui/CAL). Thanks for your elegant code!
+We referenced the model architecture and training framework from [SynergyX](https://github.com/GSanShui/SynergyX), [DeepDDS](https://github.com/Sinwang404/DeepDDS/tree/master), [PermuteDDS](https://github.com/littlewei-lazy/PermuteDDS) and [CAL](https://github.com/yongduosui/CAL). Thanks for your elegant code!
 
 ## Citation
 
